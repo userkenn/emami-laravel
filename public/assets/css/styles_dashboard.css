@@ -1,0 +1,208 @@
+@media screen and (max-width: 600px) {
+    #sidebar {
+      width: 100%;
+      float: none;
+    }
+
+    #content {
+      margin-left: 0;
+    }
+
+    #menu-toggle {
+      display: block;
+      text-align: center;
+      
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #FECE00;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 2px solid #000;
+    color: #000;
+    float: left;
+}
+
+#content {
+    margin-left: 250px;
+    margin-top: 30px;
+    padding: 16px;
+    transition: margin-left 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar {
+    background-color: #FECE00;
+    border-right: 10px;
+    padding: 15px;
+    text-align: left;
+    z-index: 2;
+    margin-top: 150px;
+    color: #000;
+}
+
+#navbar a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #F8FF8D;
+}
+
+#menu-toggle {
+    margin-top: 120px;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+    font-size: 20px;
+    color: black;
+}
+
+#menu-toggle:hover {
+    color: #aaa;
+}
+
+#header {
+    background-color: #FECE00;
+    padding: 15px;
+    color: black;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.produk-list {
+    margin-bottom: 20px;
+}
+
+.tombol-tambah {
+    background-color: #FFB400;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #000;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+}
+
+th {
+    background-color: #FFB400;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+form select {
+    width: 100%; /* Set the width to 100% to match other input fields */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="number"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #555;
+}
+
+.footer {
+    font-size: 12px;
+}
+  
+.footer .title {
+    color: #666;
+}
+  
+.footer .desc {
+    color: #888;
+}
+  
