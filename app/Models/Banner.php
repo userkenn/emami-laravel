@@ -9,7 +9,7 @@ class Banner extends Model
 {
     use HasFactory;
     protected $table = 'banner';
-    protected $fillabel = [
+    protected $fillable = [
         'gambar_banner',
         'nama_banner',
         'deskripsi',

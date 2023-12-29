@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\HomeController;    
 use App\Http\Controllers\PenjualController;
+use App\Http\Controllers\PengunjungController;
 
 
 /*
@@ -19,6 +20,7 @@ use App\Http\Controllers\PenjualController;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('index');
+Route::post('/jumlahKlik/{id}', [HomeController::class,'jumlahKlik'])->name('jumlahKlik');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/masuk', [SesiController::class,'index'])->name('login');
@@ -44,10 +46,10 @@ Route::middleware(['userAkses:penjual', 'auth'])->group(function () {
     
     Route::get('/penjual/produk', [PenjualController::class, 'indexProduk'])->name('produk.index');
     Route::get('/penjual/produk/create', [PenjualController::class, 'createProduk'])->name('produk.create');
-    Route::post('/penjual/produk', [PenjualController::class, 'storeProduk'])->name('produk.store');
-    Route::get('/penjual/produk/{produk}/edit', [PenjualController::class, 'editProduk'])->name('produk.edit');
-    Route::put('/penjual/produk/{produk}', [PenjualController::class, 'updateProduk'])->name('produk.update');
-    Route::delete('/penjual/produk/{produk}', [PenjualController::class, 'destroyProduk'])->name('produk.destroy');;
+    Route::post('/penjual/produk', [PenjualController::class, 'storeProduk'])->name('produk.stores');
+    Route::get('/penjual/produk/{produk}/edit', [PenjualController::class, 'editProduk'])->name('produk.edits');
+    Route::put('/penjual/produk/{produk}', [PenjualController::class, 'updateProduk'])->name('produk.updates');
+    Route::delete('/penjual/produk/{produk}', [PenjualController::class, 'destroyProduk'])->name('produk.destroys');;
 });
 
 
@@ -72,12 +74,25 @@ Route::middleware(['userAkses:admin', 'auth'])->group(function () {
     Route::delete('/admin/produk_user/{produk}', [AdminController::class, 'destroyProduk'])->name('produk.destroy');;
     
     Route::get('/admin/banner', [AdminController::class, 'indexBanner'])->name('banner.indexBanner');
+    Route::get('/admin/banner/create', [AdminController::class, 'createBanner'])->name('banner.create');
+    Route::post('/admin/banner', [AdminController::class, 'storeBanner'])->name('banner.store');
+    Route::get('/admin/banner/{banner_id}/edit', [AdminController::class, 'editBanner'])->name('banner.editBanner');
+    Route::put('/admin/banner/{banner_id}', [AdminController::class, 'updateBanner'])->name('banner.updateBanner');
 });
 
 
 
 Route::middleware(['userAkses:pengunjung', 'auth'])->group(function () {
-    Route::get('/pengunjung', [AdminController::class,'pengunjung']);
-   
+    Route::get('/pengunjung', [PengunjungController::class,'indexPengunjung']);
+
+    //KATEGORI
+    Route::get('/pengunjung/makanan_berat', [PengunjungController::class,'makananBerat'])->name('makanan-berat.index');
+    Route::get('/pengunjung/makanan_ringan', [PengunjungController::class,'makananRingan'])->name('makanan-ringan.index');
+    Route::get('/pengunjung/minuman', [PengunjungController::class,'Minuman'])->name('minuman.index');
+    Route::get('/pengunjung/pakaian_pria', [PengunjungController::class,'pakaianPria'])->name('pakaian-pria.index');
+    Route::get('/pengunjung/pakaian_wanita', [PengunjungController::class,'pakaianWanita'])->name('pakaian-wanita.index');
+    Route::get('/pengunjung/aksesoris_pria', [PengunjungController::class,'aksesorisPria'])->name('aksesoris-pria.index');
+    Route::get('/pengunjung/aksesoris_wanita', [PengunjungController::class,'aksesorisWanita'])->name('aksesoris-wanita.index');
+    Route::get('/pengunjung/lainnya', [PengunjungController::class,'Lainnya'])->name('lainnya.index');
 });
 

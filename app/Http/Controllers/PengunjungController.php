@@ -2,65 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pengunjung;
-use App\Http\Requests\StorePengunjungRequest;
-use App\Http\Requests\UpdatePengunjungRequest;
+
+use App\Models\Produk;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PengunjungController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    function indexPengunjung() {       
+        $produk = Produk::orderByDesc('klik')->get();
+        $products = Produk::orderByDesc('produk_terjual', 'desc')->get();   
+        return view("pengunjung.pengunjung", compact('produk','products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function jumlahKlik(Request $request, $id){
+        $update = Produk::where('kode_produk', $id)->first();
+        $update->update([
+            'klik' => $update->klik + 1
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorePengunjungRequest $request)
-    {
-        //
+    public function makananRingan(){
+        $makananRinganProduk = Produk::where('kategori_produk', 'makanan_ringan')->get();
+        return view('pengunjung.makanan_ringan', ['makananRinganProduk' => $makananRinganProduk]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Pengunjung $pengunjung)
-    {
-        //
+    public function makananBerat(){
+        $makananBeratProduk = Produk::where('kategori_produk', 'makanan_berat')->get();
+        return view('pengunjung.makanan_berat', ['makananBeratProduk' => $makananBeratProduk]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Pengunjung $pengunjung)
-    {
-        //
+    public function Minuman(){
+        $minumanProduk = Produk::where('kategori_produk', 'minuman')->get();
+        return view('pengunjung.minuman', ['minumanProduk' => $minumanProduk]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePengunjungRequest $request, Pengunjung $pengunjung)
-    {
-        //
+    public function pakaianPria(){
+        $pakaianPriaProduk = Produk::where('kategori_produk', 'pakaian_pria')->get();
+        return view('pengunjung.pakaian_pria', ['pakaianPriaProduk' => $pakaianPriaProduk]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Pengunjung $pengunjung)
-    {
-        //
+    public function pakaianWanita(){
+        $pakaianWanitaProduk = Produk::where('kategori_produk', 'pakaian_wanita')->get();
+        return view('pengunjung.pakaian_wanita', ['pakaianWanitaProduk' => $pakaianWanitaProduk]);
+    }
+    public function aksesorisPria(){
+        $aksesorisPriaProduk = Produk::where('kategori_produk', 'aksesoris_pria')->get();
+        return view('pengunjung.aksesoris_pria', ['aksesorisPriaProduk' => $aksesorisPriaProduk]);
+    }
+
+    public function aksesorisWanita(){
+        $aksesorisWanitaProduk = Produk::where('kategori_produk', 'aksesoris_wanita')->get();
+        return view('pengunjung.aksesoris_wanita', ['aksesorisWanitaProduk' => $aksesorisWanitaProduk]);
+    }
+
+    public function Lainnya(){
+        $lainnyaProduk = Produk::where('kategori_produk', 'lainnya')->get();
+        return view('pengunjung.lainnya', ['lainnyaProduk' => $lainnyaProduk]);
     }
 }

@@ -6,6 +6,8 @@
 
 <h1>Mengelola Banner</h1> <br>
 
+<a href="{{ route('banner.create') }}"><button class="tombol-tambah">Tambah Data</button></a>
+
 <table>
     <thead>
         <tr>
@@ -30,13 +32,11 @@
             <td>{{ $banner->nama_banner }}</td>
             <td>{{ $banner->deskripsi }}</td>
             <td>
-                <a href="{{ route('', $banner->id) }}">
+                <a href="{{ route('banner.editBanner', $banner->id) }}">
                     <img src="{{ asset('assets/img/penjual/edit.png') }}" alt="Edit">
                 </a> |
                 
-                <a href="#" onclick="confirmDelete('{{ route('', $banner) }}')">
-                    <img src="{{ asset('assets/img/penjual/delete.png') }}" alt="Hapus">
-                </a>
+                
             </td>
         @endforeach
     </tbody>

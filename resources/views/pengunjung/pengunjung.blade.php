@@ -44,16 +44,16 @@
                                 
                                 @php $counter = 0; @endphp
 
-                                @foreach($products as $product)
+                                @foreach($products as $p)
                                     @if ($counter < 4)
                                         <div class="col-3 align-items-center">
                                             <div class="card-container"> <!-- Add a container class -->
-                                                <a href="{{ url('contoh_detail/detail/' . $product->kode_produk) }}">
+                                                <a href="{{ url('contoh_detail/detail/' . $p->kode_produk) }}">
                                                     <div class="card">
-                                                        <img src="{{ asset('assets/img/gambar_produk/' . $product->gambar_produk) }}" class="card-img-top" alt="...">
+                                                        <img src="{{ asset('assets/img/gambar_produk/' . $p->gambar_produk) }}" class="card-img-top" alt="...">
                                                         <div class="card-body">
-                                                            <h6 class="card-title">{{ $product->nama_produk }}</h6>
-                                                            <h5 class="mt-1" style="font-weight: bolder;">Rp{{ number_format($product->harga_produk, 0, ',', '.') }}</h5>
+                                                            <h6 class="card-title">{{ $p->nama_produk }}</h6>
+                                                            <h5 class="mt-1" style="font-weight: bolder;">Rp{{ number_format($p->harga_produk, 0, ',', '.') }}</h5>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -130,117 +130,45 @@
         </div>
 
         <div class="row mx-0 mt-5">
+            
+            @foreach($produk as $p)
             <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
+                <a href="#"><div class="card" onclick="countKlik({{ $p->kode_produk }})">
+                    <img src="{{ asset('assets/img/gambar_produk/' . $p->gambar_produk) }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
+                        <h6 class="card-title">{{ $p->nama_produk }}</h6>
+                        <h5 class="mt-1" style="font-weight: bolder;">Rp.{{ number_format($p->harga_produk, 0, ',', '.') }}</h5>
                     </div></a>
                 </div>
             </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
-
-        <div class="row mx-0 mt-2">
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-            <div class="col-2 pl-0">
-                <a href="contoh_detail/detail.html"><div class="card">
-                    <img src="{{ asset('assets/img/produk1.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-title">Stick Keju Aneka Rasa</h6>
-                        <h5 class="mt-1" style="font-weight: bolder;">Rp15.000</h5>
-                    </div></a>
-                </div>
-            </div>
-        </div>
+           
     </div>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- <meta name="csrf-token" content="your_csrf_token_here"> --}}
+    <script>
+        function countKlik(id) {
+                            var url = "/jumlahKlik" + "/" + id;
+                            // replace with your desired URL
+                            var token = $('meta[name="csrf-token"]').attr('content');
+                            $.ajax({
+                                url: url,
+                                type: 'POST',
+                                data: {
+                                    _token: token
+                                },
+                                success: function(response) {
+
+                                    console.log('DATA BERHASIL DITAMBAHKAN');
+
+                                },
+                                error: function(xhr) {
+                                    console.log('DATA GAGAL DITAMBAHKAN');
+                                }
+                            });
+                        };
+    </script>
 @endsection

@@ -24,7 +24,11 @@
                     <td>{{ $user->nama_lengkap }}</td>
                     <td>{{ $user->nomor_telepon }}</td>
                     <td>{{ $user->alamat }}</td>
-                    <td><a href="{{ route('produk.lihatProduk', ['user_id' => $user->user_id]) }}">Lihat Produk</a></td>
+                    <td>
+                        <a href="{{ route('produk.lihatProduk', ['user_id' => $user->user_id]) }}">
+                            <img src="{{ asset('assets/img/penjual/eye.png') }}" alt="Edit">
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

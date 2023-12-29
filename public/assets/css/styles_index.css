@@ -1,95 +1,101 @@
 body {
-
-    background: #F8FF8D;
+    background: #f8ff8d;
     overflow-x: hidden;
-  }
-  
-  .header {
+}
+
+.header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: #fece00;
     z-index: 9999;
-  }
-  
-  .header span {
+}
+
+.img-emami {
+    display: block; /* Ensures the margin works properly */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.header span {
     font-size: 12px;
-  }
-  
+}
 
-  .item-header-2 {
+.item-header-2 {
     padding: 37px 32px;
-    background-color: #FECE00;
+    background-color: #fece00;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 6px -1px;
-  }
+}
 
-  .item-header-2 .img-emami {
+.item-header-2 .img-emami {
     width: 147px;
-  }
-  
-  .item-header-2 .text-kategory {
+}
+
+.item-header-2 .text-kategory {
     padding: 9px 9px;
     color: black;
-  }
-  
-  .item-header-2 .text-kategory:hover {
-    background-color: #FFB400 !important;
+}
+
+.item-header-2 .text-kategory:hover {
+    background-color: #ffb400 !important;
     cursor: pointer !important;
     color: black;
     border-radius: 5px;
-  }
-  
-  .item-header-2 span {
+}
+
+.item-header-2 span {
     color: #929292;
-  }
-  
-  .item-header-2 .img-search,
-  .item-header-2 .img-shop {
+}
+
+.item-header-2 .img-search,
+.item-header-2 .img-shop {
     width: 16px;
-  }
-  
-  .item-header-2 .wrap-search {
+}
+
+.item-header-2 .wrap-search {
     position: relative;
     background-color: #ffffff;
     width: 80%;
     height: 35px;
     border-radius: 5px;
-  }
-  
-  .item-header-2 .wrap-search .form-control {
+}
+
+.item-header-2 .wrap-search .form-control {
     background-color: transparent;
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    
+
     z-index: 1;
-  }
-  
-  .item-header-2 .wrap-search .form-control::placeholder {
+}
+
+.item-header-2 .wrap-search .form-control::placeholder {
     color: #cdcdcd;
     font-size: 14px;
-  }
-  
-  .item-header-2 .wrap-search .form-control:focus {
+}
+
+.item-header-2 .wrap-search .form-control:focus {
     box-shadow: none;
     border: 1px solid;
-  }
-  
-  .item-header-2 .wrap-search .wrap-icon-search {
+}
+
+.item-header-2 .wrap-search .wrap-icon-search {
     background-color: #f3f4f5;
     position: absolute;
     right: 0;
     height: 100%;
     width: 4%;
-  }
-  
-  .item-header-2 .wrap-search .wrap-icon-search .img-search {
+}
+
+.item-header-2 .wrap-search .wrap-icon-search .img-search {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .item-header-2 .wrap-img-shop {
+}
+
+.item-header-2 .wrap-img-shop {
     position: relative;
     background-color: transparent;
     height: max-content;
@@ -97,47 +103,47 @@ body {
     padding: 0px 8px 5px 8px;
     border-radius: 3px;
     transition-duration: 0.5s;
-  }
-  
-  .item-header-2 .wrap-img-shop:hover {
+}
+
+.item-header-2 .wrap-img-shop:hover {
     background-color: #f3f4f5;
     cursor: pointer;
-  }
+}
 
-  .line {
+.line {
     font-size: 26px;
     color: #cdcdcd;
     margin-bottom: 8px;
     font-weight: 100;
-  }
-  
-  .header .btn {
+}
+
+.header .btn {
     border-radius: 8px;
     font-size: 13px;
-    background-color: #FFB400;
-  }
-  
-  .header .btn:first-child {
+    background-color: #ffb400;
+}
+
+.header .btn:first-child {
     background-color: #ffffff;
-    border: 1px solid #FFB400;
-    color: #FFB400;
-  }
+    border: 1px solid #ffb400;
+    color: #ffb400;
+}
 
-  /* rekomendasi */
-  .nav-link.active {
+/* rekomendasi */
+.nav-link.active {
     border-bottom: 3px solid #f53d2d !important;
-  }
+}
 
-  .btn-width{
-    width: auto; 
+.btn-width {
+    width: auto;
     white-space: nowrap;
-    background-color: #FFB400;
+    background-color: #ffb400;
     padding: 13px;
     border-radius: 7px;
     font-weight: 500;
-  }
+}
 
-  .menu-bar {
+.menu-bar {
     display: flex;
     position: absolute;
     right: 35px;
@@ -152,36 +158,36 @@ body {
     transition: 0.1s;
     transform: rotateX(-75deg);
     z-index: 999999;
-  }
-  
-  .menuBarStyle {
+}
+
+.menuBarStyle {
     visibility: visible;
     transform: rotateX(0deg);
     transform-origin: 0% 0%;
-  }
-  
-  .menu-bar h4 {
+}
+
+.menu-bar h4 {
     font-size: 18px;
     font-weight: bold;
-  }
-  
-  .menu-bar p {
+}
+
+.menu-bar p {
     font-size: 14px;
     color: #31353bad;
-  }
-  
-  .menu-bar .btn {
+}
+
+.menu-bar .btn {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     width: 70%;
-  }
-  
-  .menu-bar img {
+}
+
+.menu-bar img {
     width: 50%;
-  }
-  
-  #overlay {
+}
+
+#overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -193,47 +199,46 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     cursor: pointer;
-  }
-  
-  .overlayStyle {
-    display: block !important;
-  }
+}
 
-  .modal {
+.overlayStyle {
+    display: block !important;
+}
+
+.modal {
     z-index: 9999;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     top: 56px;
     right: 147px;
     padding: 19px;
     width: 150%;
     border-radius: 0;
     border: none;
-  } 
+}
 
-  
-  .m-c-head span {
+.m-c-head span {
     color: #818181;
-  }
-  
-  .m-c-head .title {
-    color: #7b7b7b;
-  }
+}
 
-  /* kategory head */
+.m-c-head .title {
+    color: #7b7b7b;
+}
+
+/* kategory head */
 
 .kategory {
     display: flex;
     flex-direction: column;
     display: none;
-  }
-  
-  .kategoryStyle {
+}
+
+.kategoryStyle {
     display: block;
-  }
-  
-  .head-left {
+}
+
+.head-left {
     width: 100%;
     position: relative;
     padding-top: 140px;
@@ -241,163 +246,170 @@ body {
     padding-left: 35px;
     background-color: #ffffff;
     z-index: 2;
-  }
-  
-  .head-left h5 {
-    padding-top: 10px;
-  }
+}
 
-  .head-left h6 {
+.head-left h5 {
+    padding-top: 10px;
+}
+
+.head-left h6 {
     font-size: 12px;
     padding: 10px 0 10px 10px;
     border-radius: 4px;
     margin-right: 10px;
-  }
-  
-  .head-left h6:hover {
+}
+
+.head-left h6:hover {
     background-color: gainsboro;
     cursor: pointer;
-  }
+}
 
-  /* caraousel style */
+/* caraousel style */
 
 .carousel {
-  position: relative;
-  top: 136px;
+    position: relative;
+    top: 136px;
 }
 
 .carousel-inner {
-  width: 95%;
-  border-radius: 10px;
+    width: 95%;
+    border-radius: 10px;
 }
 
 .carousel-indicators {
-  
-  justify-content: center;
+    justify-content: center;
 }
 
 .carousel-indicators li {
-  width: 10px;
-  height: 10px;
-  border-radius: 20px;
-  border-bottom: 0;
-  border-top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    border-bottom: 0;
+    border-top: 0;
 }
 
 /* kategory-pilihan */
 
 .kategory-pilihan {
-  position: relative;
-  top: 160px;
-  margin: 8px 32px;
-  box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0;
-  background-color: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
+    position: relative;
+    top: 160px;
+    margin: 8px 32px;
+    box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
 }
 
 .carousel2 {
-  position: relative;
-  top: 0;
+    position: relative;
+    top: 0;
 }
 
 .card-category {
-  border: 1px solid #dfdfdf;
-  border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
 }
 
 .card-container {
-  width: 100%;
-  margin-bottom: 20px; /* Add some spacing between cards if desired */
+    width: 100%;
+    margin-bottom: 20px; /* Add some spacing between cards if desired */
 }
 
 .kategory-pilihan img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
 }
 
 .kategory-pilihan h1 {
-  font-size: 20px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 .kategory-pilihan h2 {
-  font-size: 16px;
-  font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
 }
 .kategory-pilihan h3 {
-  font-size: 13px;
-  font-weight: 400;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 .carousel-inner2 {
-  width: 100%;
-  border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* style trend */
 .kategory-rekomendasi {
-  position: relative;
-  top: 160px;
-  margin: 8px 32px;
-  box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0;
-  background-color: #ffffff;
-  padding: 18px;
-  border-radius: 12px;
+    position: relative;
+    top: 160px;
+    margin: 8px 32px;
+    box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0;
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
 }
 
 .kategory-rekomendasi .rekomendasi {
-  position: relative;
+    position: relative;
 }
 
 .kategory-rekomendasi .rekomendasi h3 {
-  font-size: 20px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .kategory-rekomendasi .card-rekomendasi {
-  display: flex;
-  align-items: center;
-  margin: 6px;
-  width: 350px;
-  border: 1px solid #dfdfdf;
-  border-radius: 10px;
-  box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
+    display: flex;
+    align-items: center;
+    margin: 6px;
+    width: 350px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
 }
 
 .kategory-rekomendasi .card-rekomendasi .wrap-img-rekomendasi {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  width: 33%;
-  height: 100px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 33%;
+    height: 100px;
 }
 
 .card {
-  box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
-  border-radius: 12px;
-  color: black;
+    box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
+    border-radius: 12px;
+    color: black;
 }
 
 .card a {
-  text-decoration: none; /* Menghilangkan garis bawah default pada tautan */
-  color: black; /* Mengatur warna teks menjadi hitam */
+    text-decoration: none; /* Menghilangkan garis bawah default pada tautan */
+    color: black; /* Mengatur warna teks menjadi hitam */
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Set a specific height in pixels */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card-body {
-  padding: 10px;
+    padding: 10px;
 }
 
 .card-title {
-  margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
-  /* form masuk */
-  form {
+/* form masuk */
+form {
     max-width: 400px; /* Sesuaikan lebar formulir sesuai kebutuhan Anda */
     margin: 0 auto; /* Untuk memusatkan formulir */
-  }
+}
 
-  .form-masuk{
+.form-masuk {
     margin-left: 450px;
     margin-right: 450px;
     position: relative;
@@ -406,33 +418,33 @@ body {
     background-color: #ffffff;
     padding: 16px;
     border-radius: 12px;
-   }
-  
-   .form-masuk h3 {
-      display: inline-block;
-      padding-bottom: 10px;
-      margin: 20px;
-      font-weight: 500;
-      color: #FFB400;
-      border-bottom: 3px solid #FFB400;
-    }
-  
-    .form-input h5 {
-      display: inline-block;
-      margin-left: px;
-      vertical-align: middle;
-      margin-right: 10px; 
-      font-size: 16px;
-    }
-  
-  .form-input input {
+}
+
+.form-masuk h3 {
+    display: inline-block;
+    padding-bottom: 10px;
+    margin: 20px;
+    font-weight: 500;
+    color: #ffb400;
+    border-bottom: 3px solid #ffb400;
+}
+
+.form-input h5 {
+    display: inline-block;
+    margin-left: px;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.form-input input {
     width: 100%; /* Agar input mengisi lebar penuh dari parentnya */
     padding: 8px; /* Sesuaikan padding sesuai kebutuhan Anda */
     box-sizing: border-box; /* Agar padding tidak menambah lebar input */
     margin-bottom: 15px;
-  }
-  
-  /* CSS untuk tombol */
+}
+
+/* CSS untuk tombol */
 .button-login,
 .button-reset {
     display: inline-block; /* Mengubah display menjadi inline-block agar tombol sejajar */
@@ -446,18 +458,18 @@ body {
 
 /* CSS untuk memberi jarak antara tombol Register dan Batal */
 .button-login {
-  background-color: #FFB400;
-  color: white;
-  border-color: #FFB400;   
+    background-color: #ffb400;
+    color: white;
+    border-color: #ffb400;
 }
 
 .button-reset {
     margin-left: 10px; /* Sesuaikan margin kiri sesuai kebutuhan Anda */
-    color: #FFB400;
-    border-color: #FFB400;   
+    color: #ffb400;
+    border-color: #ffb400;
 }
 
-  a {
+a {
     color: inherit; /* Pewarisan warna teks dari elemen induk */
     text-decoration: none; /* Menghilangkan garis bawah */
 }
@@ -470,22 +482,21 @@ a:hover {
 
 /* footer */
 .footer {
-  margin-top: 30px;
-  border-top: 3px solid #FFB400;
-  top: 180px;
-  position: relative;
-  background-color: #ffffff;
+    margin-top: 30px;
+    border-top: 3px solid #ffb400;
+    top: 180px;
+    position: relative;
+    background-color: #ffffff;
 }
 
 .footer {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .footer .title {
-  color: #666;
+    color: #666;
 }
 
 .footer .desc {
-  color: #888;
+    color: #888;
 }
-

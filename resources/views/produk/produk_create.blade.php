@@ -7,7 +7,7 @@
 
 <h2>Tambah Produk Baru</h2>
 
-<form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('produk.stores') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label for="nama_produk">Nama Produk:</label>

@@ -32,4 +32,22 @@ class PenjualanChart
             ->addData($data)
             ->setLabels($labels);
     }
+
+    public function buildAdmin(): \ArielMejiaDev\LarapexCharts\PieChart
+    {
+
+        // Fetch data from the database
+        $produk = Produk::all();
+
+        // Extract relevant data for the chart
+        $data = $produk->pluck('produk_terjual')->toArray();
+        $labels = $produk->pluck('nama_produk')->toArray();
+
+        return $this->chart->pieChart()
+            ->setTitle('Data Penjualan Produk')
+            ->setSubtitle('Banyaknya Produk yang Terjual')
+            
+            ->addData($data)
+            ->setLabels($labels);
+    }
 }

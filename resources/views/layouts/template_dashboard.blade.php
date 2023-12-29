@@ -20,9 +20,7 @@
                 <a href="{{ url('/home')}}"><img class="img-emami" src="{{ asset('assets/img/logo.png') }}" alt=""></a>
                 
 
-                <div class="d-flex">
-                    <button class="btn font-weight-bold mr-3">Nama Pengguna</button>
-                </div>
+                
                 
             </div>
         </div>

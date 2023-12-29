@@ -36,11 +36,11 @@
                     <td>{{ $item->stok_produk }}</td>
                     <td>{{ $item->kategori_produk }}</td>
                     <td>
-                        <a href="{{ route('produk.edit', $item->kode_produk) }}">
+                        <a href="{{ route('produk.edits', $item->kode_produk) }}">
                             <img src="{{ asset('assets/img/penjual/edit.png') }}" alt="Edit">
                         </a> |
                         
-                        <a href="#" onclick="confirmDelete('{{ route('produk.destroy', $item) }}')">
+                        <a href="#" onclick="confirmDelete('{{ route('produk.destroys', $item) }}')">
                             <img src="{{ asset('assets/img/penjual/delete.png') }}" alt="Hapus">
                         </a>
                     </td>

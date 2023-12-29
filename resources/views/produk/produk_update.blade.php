@@ -5,7 +5,7 @@
 @section('isi')
 <h2>Update Produk</h2>
 
-    <form action="{{ route('produk.update', $produk->kode_produk) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('produk.updates', $produk->kode_produk) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Banner;
+use App\Http\Requests\StoreBannerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,22 +12,19 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Produk;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProdukRequest;
 use App\Http\Requests\UpdateProdukRequest;
 
-use App\Models\Banner;
+use App\Charts\PenjualanChart;
+
 
 
 class AdminController extends Controller
 {
-    function indexAdmin() {
+    function indexAdmin(PenjualanChart $chart) {
         $user = Auth::user();
-        return view("dashboard_admin", compact('user'));
-    }
-
-    function pengunjung() {
-        $products = Produk::all();
-        return view("pengunjung", compact('products'));
+        return view("dashboard_admin", compact('user'), ['chart' => $chart->buildAdmin()]);
     }
 
 
@@ -257,5 +256,74 @@ class AdminController extends Controller
         return view('banner.index', compact('banners'));
     }
 
+    public function createBanner()
+    {
+        return view('banner.banner_create');
+    }
+
+    public function storeBanner(StoreBannerRequest $request)
+    {
+        $request->validate([
+            'gambar_banner' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama_banner' => 'required|string',
+            'deskripsi_banner' => 'nullable|string',
+        ]);
+
+        $imageName = time().'.'.$request->file('gambar_banner')->extension();
+        $request->file('gambar_banner')->move(public_path('assets/img/slide'), $imageName);
+
+        Banner::create([
+            'gambar_banner' => $imageName,
+            'nama_banner' => $request->input('nama_banner'),
+            'deskripsi_banner' => $request->input('deskripsi_banner'),
+        ]);
+
+        return redirect()->route('banner.indexBanner')->with('success', 'Banner created successfully.');
+    }
+
+    public function editBanner(Banner $banner)
+    {
+        $this->authorize('update', $banner);
+        return view('banner.banner_update', compact('produk'));
+    }
+
+    public function updateBanner(StoreBannerRequest $request, Banner $banner)
+    {
+        $this->authorize('update', $banner);
+
+        $request->validate([
+            'nama_banner' => 'required|string',
+            'deskripsi_banner' => 'nullable|string',
+            'gambar_banner' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('gambar_banner')) {
+            $this->deleteOldImages($banner);
+
+            $imageName = time().'.'.$request->gambar_banner->extension();
+            $request->gambar_banner->move(public_path('assets/img/slide'), $imageName);
+
+            $banner->update([
+                'gambar_banner' => $imageName,
+                'nama_banner' => $request->input('nama_banner'),
+                'deskripsi_banner' => $request->input('deskripsi_banner'),
+            ]);
+        } else {
+            $banner->update($request->only(['nama_banner','deskripsi_banner']));
+        }
+
+        return redirect()->route('banner.indexBanner')->with('message', 'Banner berhasil diperbarui');
+    }
+
+    private function deleteOldImages(Banner $banner)
+    {
+        if ($banner->gambar_banner) {
+            $gambarLamaPath = public_path('assets/img/gambar_produk/') . $banner->gambar_banner;
+            if (file_exists($gambarLamaPath)) {
+                unlink($gambarLamaPath);
+            }
+        }
+    }
     
+
 }

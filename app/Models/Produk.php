@@ -20,6 +20,7 @@ class Produk extends Model
         'deskripsi_produk', 
         'stok_produk', 
         'kategori_produk',
+        'klik',
     ];
 
     public function user() {
